@@ -36,9 +36,20 @@ The goal is to give the development team a **complete, unambiguous picture of ev
 │   │   │
 │   │   ├── 01-seller-onboarding/
 │   │   │   ├── GROUP.md              ← Feature group overview + child index
-│   │   │   ├── MR-001-kyc-document-upload.md
-│   │   │   ├── MR-002-seller-agreement.md
-│   │   │   └── MR-003-probation-period.md
+│   │   │   │
+│   │   │   ├── MR-001-kyc-document-upload/    ← One folder per BRS
+│   │   │   │   ├── MR-001-kyc-document-upload.md
+│   │   │   │   └── assets/
+│   │   │   │       ├── flow.svg      ← Feature flow diagram (SVG, embedded in BRS)
+│   │   │   │       └── ux/           ← Wireframes, mockups, screen recordings
+│   │   │   │
+│   │   │   ├── MR-002-seller-agreement/
+│   │   │   │   ├── MR-002-seller-agreement.md
+│   │   │   │   └── assets/
+│   │   │   │       ├── flow.svg
+│   │   │   │       └── ux/
+│   │   │   │
+│   │   │   └── ...
 │   │   │
 │   │   ├── 02-catalogue-management/
 │   │   │   ├── GROUP.md
@@ -49,7 +60,11 @@ The goal is to give the development team a **complete, unambiguous picture of ev
 │   └── wiki/                         ← Living system truth (post-implementation)
 │       ├── INDEX.md                  ← Wiki master index
 │       ├── 01-seller-onboarding/
-│       │   └── MR-001-kyc-document-upload.md
+│       │   └── MR-001-kyc-document-upload/
+│       │       ├── MR-001-kyc-document-upload.md
+│       │       └── assets/
+│       │           ├── flow.svg
+│       │           └── ux/
 │       └── ...
 │
 ├── .github/
@@ -59,7 +74,10 @@ The goal is to give the development team a **complete, unambiguous picture of ev
 └── CONTRIBUTING.md                   ← BA workflow guide
 ```
 
-**Key rule:** `/docs/brs/` is the working space. `/docs/wiki/` is the signed-off, post-tested record. Only verified features graduate to the wiki.
+**Key rules:**
+- `/docs/brs/` is the working space. `/docs/wiki/` is the signed-off, post-tested record. Only verified features graduate to the wiki.
+- Every BRS lives in its own folder named `MR-NNN-<slug>/`. This keeps the BRS document, flow diagram, and UX assets together as a single unit.
+- The `assets/ux/` subfolder is created at BRS authoring time (even if empty) so there is always a clear place to drop wireframes, mockups, or screen recordings without restructuring later.
 
 ---
 

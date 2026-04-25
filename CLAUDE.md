@@ -30,23 +30,31 @@ Every feature and BRS must specify which component(s) it touches:
 ```
 /
 ├── docs/
-│   ├── brs/                  ← BA workspace — active BRS documents
-│   │   ├── INDEX.md          ← Master feature registry
-│   │   ├── _template.md      ← BRS template
-│   │   └── NN-<group>/       ← One folder per feature group
+│   ├── brs/                        ← BA workspace — active BRS documents
+│   │   ├── INDEX.md                ← Master feature registry
+│   │   ├── _template.md            ← BRS template (12 sections)
+│   │   └── NN-<group>/             ← One folder per feature group
 │   │       ├── GROUP.md
-│   │       └── MR-NNN-<slug>.md
+│   │       └── MR-NNN-<slug>/      ← One folder per BRS
+│   │           ├── MR-NNN-<slug>.md
+│   │           └── assets/
+│   │               ├── flow.svg    ← Feature flow diagram (embedded in BRS)
+│   │               └── ux/         ← Wireframes, mockups, screen recordings
 │   │
-│   └── wiki/                 ← Living system truth (post-implementation only)
+│   └── wiki/                       ← Living system truth (post-implementation only)
 │       └── NN-<group>/
-│           └── MR-NNN-<slug>.md
+│           └── MR-NNN-<slug>/
+│               ├── MR-NNN-<slug>.md
+│               └── assets/
+│                   ├── flow.svg
+│                   └── ux/
 │
 ├── .github/
 │   ├── CODEOWNERS
 │   └── pull_request_template.md
 │
 ├── CONTRIBUTING.md
-├── CLAUDE.md                 ← This file
+├── CLAUDE.md                       ← This file
 └── Claude_Prompt_V2_23-04-2026.md  ← Full project brief
 ```
 
@@ -98,7 +106,7 @@ Full milestone detail: `docs/superpowers/specs/2026-04-25-brs-system-design.md`
 ## Working Conventions
 
 - Always use absolute paths in bash commands (shell cwd may differ from this project)
-- New BRS files go in `/docs/brs/<group>/MR-NNN-<slug>.md`
+- New BRS files go in `/docs/brs/<group>/MR-NNN-<slug>/MR-NNN-<slug>.md` with `assets/flow.svg` and `assets/ux/` alongside
 - Never write to `/docs/wiki/` directly — wiki promotion happens only after QA sign-off
 - The design system doc is the authority: `docs/superpowers/specs/2026-04-25-brs-system-design.md`
 - Feature groups and milestones can evolve — update the design doc when they do
